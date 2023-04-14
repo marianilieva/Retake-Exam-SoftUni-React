@@ -1,0 +1,11 @@
+.physical   {
+    margin: 25px;
+    padding: 15px 15px 20px;
+    border-radius: 2ch;
+    border: 4px double rgb(255, 238, 0);
+    background-color: rgba(230, 74, 18, 0.6);
+}
+
+.physical h2    {
+    text-shadow: 2px 1px 3px white;
+}

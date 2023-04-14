@@ -1,0 +1,24 @@
+.mind   {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mind>div   {
+    margin: 1%;
+    padding: 2%;
+    width: 40%;
+    border: 4px double rgb(202, 11, 75);
+    border-radius: 5cqb;
+    background-color: rgba(230, 150, 177, 0.7);
+}
+
+.title  {
+    width: 90%;
+}
+
+@media (max-width: 768px)   {
+    .mind>div   {
+        width: 90%;
+    }
+}

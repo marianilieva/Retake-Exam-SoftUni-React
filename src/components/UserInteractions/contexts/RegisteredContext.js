@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 export const RegisteredContext = createContext({});
 
@@ -35,7 +35,7 @@ export const RegisteredProvider = ({children}) => {
                         password: res.password,
                         _id: res._id,
                         accessToken: res.accessToken
-                    }]); 
+                    }]);
                 })
                 .catch(error => console.error('Error:', error))
             }
@@ -45,7 +45,7 @@ export const RegisteredProvider = ({children}) => {
         }
         else {
             alert ("Passwords don't match");
-        }console.log(registeredState);
+        }
     }
 
     return (

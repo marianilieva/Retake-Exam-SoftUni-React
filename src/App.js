@@ -10,6 +10,7 @@ import Geographical from './components/AllDependencies/Geographical/Geographical
 import Social from './components/AllDependencies/Social/Social';
 import Interests from './components/AllDependencies/Interests/Interests';
 import Error from './components/AllDependencies/Error/Error';
+import Login from './components/UserInteractions/Login/Login';
 import Register from './components/UserInteractions/Register/Register';
 
 import Footer from './components/Footer/Footer';
@@ -37,6 +38,7 @@ function App() {
           <Route path='/social' element={<Social />} />
           <Route path='/interests' element={<Interests />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
           <Route path='*' element={<Error />} />
         </Routes>
 

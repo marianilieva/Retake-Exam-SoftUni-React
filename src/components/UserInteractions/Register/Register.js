@@ -26,7 +26,7 @@ export default function Register () {
                 });
             }}>
                 <h2>Registration</h2>
-                <label htmlFor='username'>Username</label>
+                <label htmlFor='email'>Email</label>
                 <input 
                     type='email' 
                     id='email' 

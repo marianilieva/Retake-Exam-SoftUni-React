@@ -5,6 +5,7 @@ a {
 a:hover {
   transform: scale(1.1);
   color: rgb(238, 219, 172);
+  text-shadow: 2px 2px 2px black;
 }
 
 form{

@@ -26,24 +26,22 @@ function App() {
     <div className="App">
       <RegisteredProvider>
         <Menu />
-
-        <Routes>
-          <Route path='/' element={<>
-            <Header />
-            <Dependencies />
-            <AllDependencies />
-          </>} />
-          <Route path='/physical' element={<Physical />} />
-          <Route path='/mind' element={<Mind />} />
-          <Route path='/geographical' element={<Geographical />} />
-          <Route path='/social' element={<Social />} />
-          <Route path='/interests' element={<Interests />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/logout' element={<Logout />} />
-          <Route path='*' element={<Error />} />
-        </Routes>
-
+          <Routes>
+            <Route path='/' element={<>
+                <Header />
+                <Dependencies />
+                <AllDependencies />
+            </>} />
+            <Route path='/physical' element={<Physical />} />
+            <Route path='/mind' element={<Mind />} />
+            <Route path='/geographical' element={<Geographical />} />
+            <Route path='/social' element={<Social />} />
+            <Route path='/interests' element={<Interests />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/logout' element={<Logout />} />
+            <Route path='*' element={<Error />} />
+          </Routes>
         <Footer />
       </RegisteredProvider>
     </div>

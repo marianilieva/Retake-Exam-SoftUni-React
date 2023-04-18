@@ -1,4 +1,5 @@
 import { useState, createContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const RegisteredContext = createContext({});
 
@@ -6,13 +7,16 @@ export const RegisteredProvider = ({children}) => {
 
     const [registeredState, setRegisteredState] = useState([]); 
     const [accessToken, setAccessToken] = useState();
-    useEffect(() => {
-        if (accessToken){console.log(1);}else{console.log(2);}
-    },[accessToken]);
+    const [loggedEmail, setLoggedEmail] = useState();
+    const navigate = useNavigate();
+
+    useEffect (() => {
+        navigate('/');
+    }, [accessToken]);
 
     const onRegisterSubmit = (e, localRegister) => {
         e.preventDefault();
-        if (localRegister.password == localRegister.confirmPass)    {
+        if (localRegister.password === localRegister.confirmPass)    {
             let exists = false;
             for (let i = 0; i < registeredState.length; i++)    {
                 if (localRegister.email === registeredState[i].email)  {                        
@@ -40,6 +44,7 @@ export const RegisteredProvider = ({children}) => {
                         _id: res._id
                     }]);
                     setAccessToken(res.accessToken);
+                    setLoggedEmail(res.email);
                 })
                 .catch(error => console.error('Error:', error))
             }
@@ -72,6 +77,7 @@ export const RegisteredProvider = ({children}) => {
                 })
                 .then (res => {
                     setAccessToken (res.accessToken);
+                    setLoggedEmail (res.email);
                 })
                 .catch(error => console.error('Error:', error))
                 }
@@ -83,7 +89,10 @@ export const RegisteredProvider = ({children}) => {
         <RegisteredContext.Provider value={{
             onRegisterSubmit: onRegisterSubmit,
             onLoginSubmit: onLoginSubmit,
-            setAccessToken: setAccessToken
+            setAccessToken: setAccessToken,
+            accessToken: accessToken,
+            setLoggedEmail: setLoggedEmail,
+            loggedEmail: loggedEmail
         }}>
             {children}
         </RegisteredContext.Provider>

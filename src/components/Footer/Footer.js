@@ -7,7 +7,6 @@ export default function Footer () {
             <div className={styles['footerMenu']}>
                 <Link to="/register">Register</Link>
                 <Link to="/login">Log in</Link>
-                <Link to="/logout">log out</Link>
             </div>
             <div className={styles['footer']}>
                 Copyrights &copy; of the app and all of its features (including 

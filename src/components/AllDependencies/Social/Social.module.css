@@ -10,7 +10,8 @@
     width: 40%;
     border: 4px double rgb(222, 245, 21);
     border-radius: 5dvb;
-    background-color: rgba(71, 117, 218, 0.7);
+    background-color: rgba(100, 140, 226, 0.7);
+    position: relative;
 }
 
 @media (max-width: 768px)   {

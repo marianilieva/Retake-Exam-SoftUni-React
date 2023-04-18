@@ -2,8 +2,9 @@
     margin: 25px;
     padding: 15px 15px 20px;
     border-radius: 2ch;
-    border: 4px double rgb(255, 238, 0);
-    background-color: rgba(230, 74, 18, 0.6);
+    border: 4px double rgb(238, 224, 32);
+    background-color: rgba(241, 150, 117, 0.6);
+    position: relative;
 }
 
 .physical h2    {

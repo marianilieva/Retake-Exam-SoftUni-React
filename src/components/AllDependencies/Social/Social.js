@@ -1,6 +1,12 @@
+import { useContext } from 'react';
+import UserActions from '../Interactions/UserActions/UserActions';
+import Statistics from '../Interactions/Statistics/Statistics';
+import { RegisteredContext } from '../../UserInteractions/contexts/RegisteredContext';
 import styles from './Social.module.css';
 
 export default function Social ()   {
+    const {accessToken, loggedEmail} = useContext(RegisteredContext);
+
     return (
         <div>
             <h3>Family, friends, relatioships</h3>
@@ -29,6 +35,10 @@ export default function Social ()   {
                         to make their parents' lives better, to teach them how to be happy 
                         and to heal them. We should learn from our children!
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h4>Family</h4>
@@ -44,6 +54,10 @@ export default function Social ()   {
                         who are weak, the family is the first who must help, especially in today's 
                         world. Value your families! 
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h4>Friends</h4>
@@ -51,6 +65,10 @@ export default function Social ()   {
                         Frinds are like a second family which a person choses himself. It must 
                         be filtered wisely and by common interests, beliefs, character traits.
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h4>Living Spot</h4>
@@ -63,6 +81,10 @@ export default function Social ()   {
                         there is no such official division because it is a small country but 
                         people can still investigate and chose their spot for living.
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h4>Co-workers</h4>
@@ -72,6 +94,10 @@ export default function Social ()   {
                         be chosen, too. Usually, when sharing common interests and skills, 
                         they share common intelligence.
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h4>Culture and Nationality</h4>
@@ -82,6 +108,10 @@ export default function Social ()   {
                         hear? All these are factors of life which influence your belies 
                         and your life.
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h4>Religion</h4>
@@ -93,6 +123,10 @@ export default function Social ()   {
                         has religion but everybody believes in something - nature, science, 
                         psychology or phylosophy, etc.
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
             </div>
         </div>

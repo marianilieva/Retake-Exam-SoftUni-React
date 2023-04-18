@@ -1,6 +1,12 @@
+import { useContext } from 'react';
+import UserActions from '../Interactions/UserActions/UserActions';
+import Statistics from '../Interactions/Statistics/Statistics';
+import { RegisteredContext } from '../../UserInteractions/contexts/RegisteredContext';
 import styles from './Interests.module.css';
 
 export default function Interests ()    {
+    const {accessToken, loggedEmail} = useContext(RegisteredContext);
+
     return (
         <div>
             <h2>Hobbies, Interests, Activities</h2>
@@ -19,6 +25,10 @@ export default function Interests ()    {
                         bad influence for some of the people, so they must be used wisely: Money 
                         is not goal, it is tool!
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h3>Proffession</h3>
@@ -29,6 +39,10 @@ export default function Interests ()    {
                         study what they want, or do what they can. Proffession is skill or skills 
                         which you study for and upgrade.
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h3>Hobbies</h3>
@@ -39,6 +53,10 @@ export default function Interests ()    {
                         They bring to people certain advantages like self-development, 
                         freedom, way to express themselves, health, communication, etc.
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h3>Activities</h3>
@@ -47,6 +65,10 @@ export default function Interests ()    {
                         completing needs, acception in some society, help others, gain 
                         popularity, etc.
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h3>Interests</h3>
@@ -55,24 +77,40 @@ export default function Interests ()    {
                         in life, what you aim for, what makes you happy, fulfilled, 
                         useful.
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h3>Find out who you are (test)</h3>
                     <p>
                         Your interests tell us who you are
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h3>Fortune teller: What do you need?</h3>
                     <p>
                         Ask the destiny
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
                 <div>
                     <h3>What shoule you do with your life - Try your luck:</h3>
                     <p>
                         Luck can talk sometimes
                     </p>
+                    {accessToken
+                        ? <UserActions /> 
+                        : <Statistics />
+                    }
                 </div>
             </div>
         </div>

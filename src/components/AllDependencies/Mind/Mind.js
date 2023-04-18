@@ -1,6 +1,12 @@
+import { useContext } from 'react';
+import UserActions from '../Interactions/UserActions/UserActions';
+import Statistics from '../Interactions/Statistics/Statistics';
+import { RegisteredContext } from '../../UserInteractions/contexts/RegisteredContext';
 import styles from './Mind.module.css';
 
 export default function Mind () {
+    const {accessToken, loggedEmail} = useContext(RegisteredContext);
+
     return (
         <div className={styles['mind']}>
             <h2 className={styles['title']}>Power of a Healing Mind</h2>
@@ -13,6 +19,10 @@ export default function Mind () {
                     on level of intelligence, preferences, priorities, dependencies,
                     social environment and percentage realysm. 
                 </p>
+                {accessToken
+                    ? <UserActions /> 
+                    : <Statistics />
+                }
             </div>
             <div>
                 <h3>Serotonin</h3>
@@ -21,6 +31,10 @@ export default function Mind () {
                     It is been provoked by light, some food, physical activities,
                     other hormones and mind state.
                 </p>
+                {accessToken
+                    ? <UserActions /> 
+                    : <Statistics />
+                }
             </div>
             <div>
                 <h3>Synchron with own self</h3>
@@ -40,6 +54,10 @@ export default function Mind () {
                     So, intuition is there to tell us if we are right or wrong, we just have to 
                     hear and understand it.
                 </p>
+                {accessToken
+                    ? <UserActions /> 
+                    : <Statistics />
+                }
             </div>
             <div>
                 <h3>Inner peace</h3>
@@ -47,6 +65,10 @@ export default function Mind () {
                     Inner peace comes when you do what you feel, when you understand what 
                     you feel and do.
                 </p>
+                {accessToken
+                    ? <UserActions /> 
+                    : <Statistics />
+                }
             </div>
             <div>
                 <h3>Clear consious</h3>
@@ -56,6 +78,10 @@ export default function Mind () {
                     calmness, forest, medicines, food, plants, animals, psychology, 
                     metaphysics.
                 </p>
+                {accessToken
+                    ? <UserActions /> 
+                    : <Statistics />
+                }
             </div>
             <div>
                 <h3>Keeping ballance</h3>
@@ -64,6 +90,10 @@ export default function Mind () {
                     limits, as not going against the nature. If people live normal life, 
                     they cannot feel need of unnormal acts.
                 </p>
+                {accessToken
+                    ? <UserActions /> 
+                    : <Statistics />
+                }
             </div>
             <div>
                 <h3>Follow/make evolution</h3>
@@ -74,6 +104,10 @@ export default function Mind () {
                     of evolution, now fashionable is development of mind in all its aspects
                     as psichology, astrology, metaphysics and other.
                 </p>
+                {accessToken
+                    ? <UserActions /> 
+                    : <Statistics />
+                }
             </div>
         </div>
     );

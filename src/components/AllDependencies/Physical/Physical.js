@@ -1,6 +1,12 @@
+import { useContext } from 'react';
+import UserActions from '../Interactions/UserActions/UserActions';
+import Statistics from '../Interactions/Statistics/Statistics';
+import { RegisteredContext } from '../../UserInteractions/contexts/RegisteredContext';
 import styles from './Physical.module.css';
 
 export default function Physical () {
+    const {accessToken, loggedEmail} = useContext(RegisteredContext);
+
     return (
         <div className={styles['physical']}>
             <h2>Health and Physical influences</h2>
@@ -61,8 +67,12 @@ export default function Physical () {
                 that changed over time and has saved many creatures, including humans,
                 alive - intuition, senses. If you feel the nature, the nature will feel you.
                 Feelings give us information on reality, because it exists, no matter
-                if they know it or no. Living in ballance is not an easy but worthy thing!
+                if they know it or not. Living in ballance is not an easy but worthy thing!
             </p>
+            {accessToken
+                ? <UserActions /> 
+                : <Statistics />
+            }
         </div>
     );
 }

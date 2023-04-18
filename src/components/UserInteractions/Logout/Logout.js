@@ -4,7 +4,7 @@ import { RegisteredContext } from '../contexts/RegisteredContext';
 import styles from './Logout.module.css';
 
 export default function Logout () {
-    const {setAccessToken} = useContext(RegisteredContext);
+    const {setAccessToken, setLoggedEmail} = useContext(RegisteredContext);
     const navigate = useNavigate();
 
     const onBack = () => {
@@ -13,6 +13,7 @@ export default function Logout () {
 
     const onLogout = () => {
         setAccessToken('');
+        setLoggedEmail('');
         navigate('/');
     }
 

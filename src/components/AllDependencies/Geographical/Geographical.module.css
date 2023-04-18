@@ -11,6 +11,7 @@
     border: 4px double rgb(20, 105, 233);
     border-radius: 5cqb;
     background-color: rgba(230, 150, 177, 0.7);
+    position: relative;
 }
 
 .title  {

@@ -1,5 +1,6 @@
-import { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { RegisteredContext } from '../../../UserInteractions/contexts/RegisteredContext';
+
 import styles from './UserActions.module.css';
 
 export default function UserActions ({setComment}) {
@@ -14,7 +15,7 @@ export default function UserActions ({setComment}) {
         setAdd(state => ({ ...state, [e.target.name] : e.target.value}));
     }
 
-    const onAddSubmit = (e) => {
+    const onAddSubmit = (e) => {console.log(1);
         e.preventDefault();
         fetch('http://localhost:3030/jsonstore/comments', {
                     method: 'POST',
@@ -43,13 +44,14 @@ export default function UserActions ({setComment}) {
 
     return (
         <div className={styles['userActions']}>
-            <form onSubmit={onAddSubmit}>
+            <form onSubmit={(e) => {onAddSubmit(e)}}>
                 <input 
                     type='text' 
                     id='add' 
                     name='add'
+                    placeholder='Your comment here...'
                     value={add.comment} 
-                    onChange={onAddChange}
+                    onChange={(e) => {onAddChange(e)}}
                 />
                 <button type='submit'>Add comment</button>
             </form>

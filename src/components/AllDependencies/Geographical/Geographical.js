@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import UserActions from '../Interactions/UserActions/UserActions';
 import Statistics from '../Interactions/Statistics/Statistics';
 import { RegisteredContext } from '../../UserInteractions/contexts/RegisteredContext';
@@ -18,6 +18,10 @@ export default function Geographical () {
     const {plants, setPlants} = useState([]);
     const {animals, setAnimals} = useState ([]);
 
+    const setComment = (setter) => {
+        setter();
+    }
+    
     return (
         <div className={styles['geographical']}>            
             <h2 className={styles['title']}>Climate and Nature</h2>
@@ -27,10 +31,10 @@ export default function Geographical () {
                     Sun gives serotonin, light, warmness, vitamine D. It protects
                     us from melancholy, cold, viruses, rachitis, alergies. It helps 
                     us read, write, learn new things, know nature, it helps plants grow 
-                    and give us fresh air, vegetables and fruits.
+                    and give us fresh. air, vegetables and fruits.
                 </p>
                 {accessToken
-                    ? <UserActions setComment={setSun} /> 
+                    ? <UserActions setComment={ setSun } />                        
                     : <Statistics comments={sun} />
                 }
             </div>
